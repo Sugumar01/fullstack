@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Chat App</title>
+  <style>
+    #chat-box {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #ccc;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="chat-box"></div>
+  <input type="text" id="message-input" placeholder="Type your message...">
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    function sendMessage() {
+      var messageInput = document.getElementById("message-input");
+      var message = messageInput.value;
+      if (message.trim() !== "") {
+        var chatBox = document.getElementById("chat-box");
+        chatBox.innerHTML += "<p>You: " + message + "</p>";
+        messageInput.value = "";
+        // You can add code here to send the message to a server or handle it as needed.
+      }
+    }
+  </script>
+
+</body>
+</html>
+
